@@ -9,18 +9,18 @@
   "projects": {
     "ui-lib": {
       "projectType": "library",
-      "root": "projects/ui-lib",
-      "sourceRoot": "projects/ui-lib/src",
+      "root": "projects/libs/ui-lib",
+      "sourceRoot": "projects/libs/ui-lib/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/ui-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/libs/ui-lib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ui-lib/tsconfig.lib.json"
+              "tsConfig": "projects/libs/ui-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -28,14 +28,14 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ui-lib/tsconfig.spec.json"
+            "tsConfig": "projects/libs/ui-lib/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/ui-lib/**/*.ts", "projects/ui-lib/**/*.html"],
-            "eslintConfig": "projects/ui-lib/eslint.config.js"
+            "lintFilePatterns": ["projects/libs/ui-lib/**/*.ts", "projects/libs/ui-lib/**/*.html"],
+            "eslintConfig": "projects/libs/ui-lib/eslint.config.js"
           }
         }
       }
