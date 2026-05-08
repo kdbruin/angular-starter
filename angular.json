@@ -79,7 +79,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "outputPath": "dist/apps/hello-world",
+              "deleteOutputPath": true
             },
             "development": {
               "optimization": false,
@@ -155,7 +157,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "outputPath": "dist/apps/signal-forms",
+              "deleteOutputPath": true
             },
             "development": {
               "optimization": false,
