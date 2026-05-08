@@ -115,6 +115,82 @@
           }
         }
       }
+    },
+    "signal-forms": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/apps/signal-forms",
+      "sourceRoot": "projects/apps/signal-forms/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/apps/signal-forms/src/main.ts",
+            "tsConfig": "projects/apps/signal-forms/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/apps/signal-forms/public"
+              }
+            ],
+            "styles": ["projects/apps/signal-forms/src/styles.scss"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "signal-forms:build:production"
+            },
+            "development": {
+              "buildTarget": "signal-forms:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/apps/signal-forms/**/*.ts",
+              "projects/apps/signal-forms/**/*.html"
+            ],
+            "eslintConfig": "projects/apps/signal-forms/eslint.config.js"
+          }
+        }
+      }
     }
   }
 }
