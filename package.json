@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "start:hello-world": "ng serve hello-world",
+    "build:hello-world": "ng build hello-world",
+    "watch:hello-world": "ng build hello-world --watch --configuration development",
+    "test:hello-world": "ng test hello-world",
+    "lint:hello-world": "ng lint hello-world",
+    "start:ui-lib": "ng serve ui-lib",
+    "build:ui-lib": "ng build ui-lib",
+    "watch:ui-lib": "ng build ui-lib --watch --configuration development",
+    "test:ui-lib": "ng test ui-lib",
+    "lint:ui-lib": "ng lint ui-lib"
   },
   "private": true,
   "packageManager": "pnpm@11.0.8",

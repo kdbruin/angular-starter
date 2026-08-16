@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Start project",
       "type": "npm",
-      "script": "start",
+      "script": "start:${input:projectName}",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -21,8 +22,9 @@
       }
     },
     {
+      "label": "Test project",
       "type": "npm",
-      "script": "test",
+      "script": "test:${input:projectName}",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -37,6 +39,72 @@
           }
         }
       }
+    },
+    {
+      "label": "Lint project",
+      "type": "npm",
+      "script": "lint:${input:projectName}",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Changes detected"
+          },
+          "endsPattern": {
+            "regexp": "bundle generation (complete|failed)"
+          }
+        }
+      }
+    },
+    {
+      "label": "Build project",
+      "type": "npm",
+      "script": "build:${input:projectName}",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Changes detected"
+          },
+          "endsPattern": {
+            "regexp": "bundle generation (complete|failed)"
+          }
+        }
+      }
+    },
+    {
+      "label": "Build and Watch project",
+      "type": "npm",
+      "script": "watch:${input:projectName}",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Changes detected"
+          },
+          "endsPattern": {
+            "regexp": "bundle generation (complete|failed)"
+          }
+        }
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "projectName",
+      "type": "pickString",
+      "description": "Select project",
+      "options": ["hello-world", "ui-lib"],
+      "default": "hello-world"
     }
   ]
 }
