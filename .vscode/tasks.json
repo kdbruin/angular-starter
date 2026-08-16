@@ -103,7 +103,7 @@
       "id": "projectName",
       "type": "pickString",
       "description": "Select project",
-      "options": ["hello-world", "ui-lib"],
+      "options": ["hello-world", "signal-forms", "ui-lib"],
       "default": "hello-world"
     }
   ]
