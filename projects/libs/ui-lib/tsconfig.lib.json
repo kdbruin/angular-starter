@@ -3,7 +3,8 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../out-tsc/lib",
+    "outDir": "../../../out-tsc/ui-lib/lib",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true,
     "types": []
